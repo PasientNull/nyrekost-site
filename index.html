@@ -182,5 +182,25 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var bars = document.querySelector('.bars');
+  if (!bars) return;
+  if (!('IntersectionObserver' in window)) {
+    bars.classList.add('in-view');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        bars.classList.add('in-view');
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(bars);
+})();
+</script>
+
 </body>
 </html>
