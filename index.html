@@ -3,63 +3,145 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nyrekost — diettverktøy for nyresjuke</title>
-<meta name="description" content="Norsk diettapp for personar med kronisk nyresjukdom. Hald oversikt over salt, kalium, fosfor, protein og væske.">
-<meta property="og:title" content="Nyrekost — diettverktøy for nyresjuke">
-<meta property="og:description" content="Hald oversikt over salt, kalium, fosfor, protein og væske ved kronisk nyresjukdom.">
-<meta property="og:type" content="website">
+<title>Nyrekost — eit verktøy for kvardagen med kronisk nyresjukdom</title>
+<meta name="description" content="Spor salt, kalium, fosfor, protein og væske. Lokalt på telefonen. Norske matvarer.">
+<meta property="og:title" content="Nyrekost">
+<meta property="og:description" content="Eit verktøy for kvardagen med kronisk nyresjukdom.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <h1>Nyrekost</h1>
+<header class="strip">
+  <div class="strip-inner">
+    <span class="brand">Nyrekost</span>
+    <span class="meta">
+      <span>Mai 2026</span>
+      <span>Lukka testing</span>
+    </span>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-wrap">
-    <h1>Diettverktøy for nyresjuke</h1>
-    <p class="lede">Hald oversikt over salt, kalium, fosfor, protein og væske — alt lokalt på telefonen din.</p>
-    <div class="cta-row">
-      <span class="badge">Lukka testing — kontakt for tilgang</span>
+  <div class="hero-inner">
+    <div>
+      <h1>Eit verktøy<br>for <em>kvardagen</em><br>med nyresjukdom.</h1>
+      <p class="lede">Hald oversikt over salt, kalium, fosfor, protein og væske &mdash; utan kontoar, sky eller telemetri. Berre din telefon, dine grenser, dine måltid.</p>
+    </div>
+    <aside class="hero-side">
+      <strong>I korte trekk</strong>
+      Norsk app · Android<br>
+      2&thinsp;000+ matvarer<br>
+      Strekkodeskanning<br>
+      Lokal datalagring<br>
+      Lukka testing pågår
+    </aside>
+  </div>
+</section>
+
+<section class="demo">
+  <div class="demo-inner">
+    <div class="demo-text">
+      <p class="label">Slik ser det ut</p>
+      <h2>Dagsoppsummeringa fortel deg det du treng å vite, ingenting meir.</h2>
+      <p>Fem barer, fem fargar. Grøn er innanfor, gul nærmar seg grensa, raud er over. Verdiane er dine eigne &mdash; sett av deg eller saman med dietisten din.</p>
+      <p>Trykk for detaljar. Sveip for å slette. Det skal ikkje vere meir komplisert enn det.</p>
+    </div>
+    <div class="bars" aria-hidden="true">
+      <div class="bars-head">
+        <span>I dag</span>
+        <span>Mål</span>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span class="name">Natrium</span><span class="vals"><span class="now">1240</span> / 2300 mg</span></div>
+        <div class="bar-track"><div class="bar-fill green" style="--w: 54%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span class="name">Kalium</span><span class="vals"><span class="now">1850</span> / 2500 mg</span></div>
+        <div class="bar-track"><div class="bar-fill amber" style="--w: 74%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span class="name">Fosfor</span><span class="vals"><span class="now">820</span> / 900 mg</span></div>
+        <div class="bar-track"><div class="bar-fill red" style="--w: 91%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span class="name">Protein</span><span class="vals"><span class="now">42</span> / 50 g</span></div>
+        <div class="bar-track"><div class="bar-fill amber" style="--w: 84%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-meta"><span class="name">Væske</span><span class="vals"><span class="now">650</span> / 1500 ml</span></div>
+        <div class="bar-track"><div class="bar-fill green" style="--w: 43%"></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="features">
-  <div class="features-wrap">
-    <div class="feature">
-      <div class="icon">📊</div>
-      <h3>Personlege grenser</h3>
-      <p>Malar for CKD-stadium 3-5, hemodialyse og peritonealdialyse. Avtal verdiane med lege eller ernæringsfysiolog.</p>
+<section class="editorial">
+  <div class="editorial-inner">
+    <div class="editorial-head">
+      <span>Funksjonar</span>
+      <span>01 — 04</span>
     </div>
-    <div class="feature">
-      <div class="icon">🔍</div>
-      <h3>2000 norske matvarer</h3>
-      <p>Søk i Mattilsynets matvaretabell. Strekkodeskanning av merkevarer via Open Food Facts.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🔒</div>
-      <h3>Privat data</h3>
-      <p>Alt ligg lokalt på telefonen. Ingen sky, ingen kontoar, ingen analytikk.</p>
+    <div class="entry-grid">
+      <article class="entry">
+        <div class="num">01 / Database</div>
+        <h3>Mattilsynet sin matvaretabell, baka inn i appen.</h3>
+        <p>Over 2&thinsp;000 norske matvarer med næringsverdiar for natrium, kalium, fosfor, kalsium, protein og meir. Ingen nettforbindelse trengs for søk.</p>
+      </article>
+      <article class="entry">
+        <div class="num">02 / Skanning</div>
+        <h3>Skann strekkoda på pakka.</h3>
+        <p>Appen finn produktnavnet via Open Food Facts og foreslår ei matchande matvare frå Matvaretabellen. Du bekreftar éin gong &mdash; deretter går det automatisk.</p>
+      </article>
+      <article class="entry">
+        <div class="num">03 / Personlege grenser</div>
+        <h3>Tre malar. Ein dietist.</h3>
+        <p>CKD stadium 3-5, hemodialyse og peritonealdialyse. Eller skriv inn dine eigne tal etter samtale med behandlande lege eller klinisk ernæringsfysiolog.</p>
+      </article>
+      <article class="entry">
+        <div class="num">04 / Personvern</div>
+        <h3>Data forblir på telefonen.</h3>
+        <p>Inga sky-synking, ingen brukarkonto, ingen analytikk. Avinstallerer du appen, er dataen borte. Du eig han fullt ut, slik det skal vere med helsedata.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="meta">
-  <div class="meta-wrap">
-    <h2>Status</h2>
-    <p>Appen er under utvikling og i lukka testing. Kontakt <a href="mailto:oysborch@gmail.com">oysborch@gmail.com</a> for å bli testar.</p>
-
-    <h2>Viktig</h2>
-    <p>Nyrekost erstattar ikkje medisinsk behandling, råd eller diagnose. Konsulter alltid lege eller klinisk ernæringsfysiolog ved spørsmål om kosthald og nyresjukdom.</p>
+<section class="pull">
+  <div class="pull-inner">
+    <q>Det er ingen norsk diettapp for personar med kronisk nyresjukdom. Det manglar — og det er rart, gitt at dietten gjerne er det viktigaste verktøyet pasienten har sjølv.</q>
+    <span class="src">Bakgrunn for prosjektet</span>
   </div>
 </section>
 
-<footer>
-  <a href="privacy.html">Personvern</a> · <a href="terms.html">Brukarvilkår</a>
+<section class="spec">
+  <div class="spec-inner">
+    <h2><small>Tekniske detaljar</small>Bygd for å vare,<br>med fokus på dei rette tinga.</h2>
+    <dl>
+      <div><dt>Plattform</dt><dd>Android 8.0 og nyare</dd></div>
+      <div><dt>Storleik</dt><dd>~30 MB nedlasta</dd></div>
+      <div><dt>Språk</dt><dd>Nynorsk</dd></div>
+      <div><dt>Pris</dt><dd>Gratis. Ingen kjøp i appen.</dd></div>
+      <div><dt>Datakjelder</dt><dd>Matvaretabellen (NLOD&nbsp;2.0), Open Food Facts (ODbL)</dd></div>
+      <div><dt>Status</dt><dd>Lukka testing — kontakt for tilgang</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="brand">Nyrekost</div>
+      <p class="disc">
+        Nyrekost erstattar ikkje medisinsk behandling, råd eller diagnose. Konsulter alltid lege eller klinisk ernæringsfysiolog ved spørsmål om kosthald og nyresjukdom.
+      </p>
+    </div>
+    <nav>
+      <a href="mailto:oysborch@gmail.com">Kontakt</a>
+      <a href="privacy.html">Personvern</a>
+      <a href="terms.html">Brukarvilkår</a>
+    </nav>
+    <div class="copy">© 2026 Nyrekost · Bygd i Noreg</div>
+  </div>
 </footer>
 
 </body>
