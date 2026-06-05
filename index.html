@@ -163,10 +163,42 @@
       <div><dt>Plattform</dt><dd>Android 8.0 og nyare</dd></div>
       <div><dt>Storleik</dt><dd>~30 MB nedlasta</dd></div>
       <div><dt>Språk</dt><dd>Nynorsk</dd></div>
-      <div><dt>Pris</dt><dd>Gratis. Ingen kjøp i appen.</dd></div>
+      <div><dt>Pris</dt><dd>Gratis. <a href="#stott">Frivillig donasjon</a> for dei som vil.</dd></div>
       <div><dt>Datakjelder</dt><dd>Matvaretabellen (NLOD&nbsp;2.0), Open Food Facts (ODbL)</dd></div>
       <div><dt>Status</dt><dd>Lukka testing — <a href="#bli-tester">bli tester</a></dd></div>
     </dl>
+  </div>
+</section>
+
+<section class="support" id="stott">
+  <div class="support-inner">
+    <p class="support-label">Frivillig — utan press</p>
+    <h2>Lik du Nyrekost? Spand ein kaffi.</h2>
+    <p class="support-text">
+      Appen er gratis og utan reklame, og kjem til å vere det. Viss du har lyst til å gi nokre kroner tilbake for arbeidet, set eg pris på det &mdash; ikkje noko du må, men det hjelper på drift og tid til vidareutvikling.
+    </p>
+    <div class="support-amounts" role="group" aria-label="Føreslåtte beløp">
+      <a class="support-btn" href="vipps://?phone=4795992530&amp;amount=3000&amp;comment=Nyrekost">
+        <span class="support-num">30</span>
+        <span class="support-unit">NOK</span>
+      </a>
+      <a class="support-btn" href="vipps://?phone=4795992530&amp;amount=5000&amp;comment=Nyrekost">
+        <span class="support-num">50</span>
+        <span class="support-unit">NOK</span>
+      </a>
+      <a class="support-btn" href="vipps://?phone=4795992530&amp;amount=10000&amp;comment=Nyrekost">
+        <span class="support-num">100</span>
+        <span class="support-unit">NOK</span>
+      </a>
+    </div>
+    <form class="support-custom" id="support-custom" onsubmit="return openVippsCustom(event)">
+      <label for="support-amount">Anna beløp</label>
+      <input id="support-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="NOK" required>
+      <button type="submit">Opne Vipps →</button>
+    </form>
+    <p class="support-fine">
+      Vipps&nbsp;til&nbsp;<strong>959&nbsp;92&nbsp;530</strong>. Knappane prøver å opne Vipps-appen direkte. Viss det ikkje fungerer: opne Vipps manuelt, vel «Send», skriv inn nummeret og beløpet du vil gi.
+    </p>
   </div>
 </section>
 
@@ -205,6 +237,16 @@
   }, { threshold: 0.35 });
   io.observe(bars);
 })();
+
+function openVippsCustom(e) {
+  e.preventDefault();
+  var input = document.getElementById('support-amount');
+  var nok = parseInt(input.value, 10);
+  if (!nok || nok < 1) return false;
+  var ore = nok * 100;
+  window.location.href = 'vipps://?phone=4795992530&amount=' + ore + '&comment=Nyrekost';
+  return false;
+}
 </script>
 
 </body>
