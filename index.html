@@ -178,44 +178,28 @@
       Appen er gratis og utan reklame, og kjem til å vere det. Viss du har lyst til å gi nokre kroner tilbake for arbeidet, set eg pris på det &mdash; ikkje noko du må, men det hjelper på drift og tid til vidareutvikling.
     </p>
     <div class="support-amounts" role="group" aria-label="Føreslåtte beløp">
-      <button class="support-btn" type="button" onclick="showSendDialog(30)">
+      <a class="support-btn" href="https://qr.vipps.no/28/2/01/031/4795992530?v=1&amp;m=Nyrekost&amp;a=3000">
         <span class="support-num">30</span>
         <span class="support-unit">NOK</span>
-      </button>
-      <button class="support-btn" type="button" onclick="showSendDialog(50)">
+      </a>
+      <a class="support-btn" href="https://qr.vipps.no/28/2/01/031/4795992530?v=1&amp;m=Nyrekost&amp;a=5000">
         <span class="support-num">50</span>
         <span class="support-unit">NOK</span>
-      </button>
-      <button class="support-btn" type="button" onclick="showSendDialog(100)">
+      </a>
+      <a class="support-btn" href="https://qr.vipps.no/28/2/01/031/4795992530?v=1&amp;m=Nyrekost&amp;a=10000">
         <span class="support-num">100</span>
         <span class="support-unit">NOK</span>
-      </button>
+      </a>
     </div>
-    <form class="support-custom" id="support-custom" onsubmit="return showSendCustom(event)">
+    <form class="support-custom" id="support-custom" onsubmit="return openVippsCustom(event)">
       <label for="support-amount">Anna beløp</label>
       <input id="support-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="NOK" required>
-      <button type="submit">Vis instruksjonar →</button>
+      <button type="submit">Opne Vipps →</button>
     </form>
     <p class="support-fine">
-      Vipps&nbsp;til&nbsp;<strong>959&nbsp;92&nbsp;530</strong>. Trykk eit beløp for å sjå instruksjonar, eller send manuelt i Vipps: «Send» &mdash; nummer 959&nbsp;92&nbsp;530 &mdash; beløp du vil gi.
+      Vipps&nbsp;til&nbsp;<strong>959&nbsp;92&nbsp;530</strong>. Lenkjene opnar Vipps-appen med beløp ferdig utfylt &mdash; fungerer berre på mobil med Vipps installert.
     </p>
   </div>
-
-  <dialog id="send-dialog" class="send-dialog">
-    <form method="dialog" class="send-dialog-inner">
-      <h3>Send via Vipps</h3>
-      <p class="send-dialog-instr">Opne Vipps, vel «Send», og skriv inn:</p>
-      <dl class="send-dialog-info">
-        <div><dt>Nummer</dt><dd id="send-phone">959 92 530</dd></div>
-        <div><dt>Beløp</dt><dd id="send-amount">kva du vil gi</dd></div>
-      </dl>
-      <div class="send-dialog-actions">
-        <button type="button" onclick="copyPhone()">Kopier nummer</button>
-        <button type="button" onclick="openVippsApp()">Opne Vipps</button>
-        <button type="submit">Lukk</button>
-      </div>
-    </form>
-  </dialog>
 </section>
 
 <footer class="foot">
@@ -254,48 +238,15 @@
   io.observe(bars);
 })();
 
-function showSendDialog(nok) {
-  var dialog = document.getElementById('send-dialog');
-  var amountEl = document.getElementById('send-amount');
-  amountEl.textContent = nok ? (nok + ' NOK') : 'kva du vil gi';
-  if (typeof dialog.showModal === 'function') {
-    dialog.showModal();
-  } else {
-    dialog.setAttribute('open', '');
-  }
-}
-
-function showSendCustom(e) {
+function openVippsCustom(e) {
   e.preventDefault();
   var input = document.getElementById('support-amount');
   var nok = parseInt(input.value, 10);
   if (!nok || nok < 1) return false;
-  showSendDialog(nok);
+  var ore = nok * 100;
+  window.location.href =
+    'https://qr.vipps.no/28/2/01/031/4795992530?v=1&m=Nyrekost&a=' + ore;
   return false;
-}
-
-function copyPhone() {
-  var phone = '95992530';
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(phone);
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = phone;
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); } catch (_) {}
-    document.body.removeChild(ta);
-  }
-  var btn = event && event.target;
-  if (btn) {
-    var orig = btn.textContent;
-    btn.textContent = 'Kopiert ✓';
-    setTimeout(function () { btn.textContent = orig; }, 1500);
-  }
-}
-
-function openVippsApp() {
-  window.location.href = 'vipps://';
 }
 </script>
 
